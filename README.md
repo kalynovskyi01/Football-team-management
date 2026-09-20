@@ -37,8 +37,9 @@ docker compose up -d
 * Go to ``http://your_server_ip:8085/docs`` see API documentation (acces to the doccumentaion is available only if ``ENVIRONMENT`` variable for api service in ``API\docker-compose.yml`` is not set to ``Production``).
 
 ## Endpoint reference
- This is Class diagrame of database (for now, only class ``Player`` )
- ![alt text](static/Class.png)
+ This is class diagram for database (for now, only class ``Player``)
+
+![alt text](static/Class.png)
 
 All endpoints are relative to ``http://your_server_ip:8085``.
  
