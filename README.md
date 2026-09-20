@@ -23,18 +23,18 @@ Only one port ``8085`` is open for API users outside the server loopback network
 ```bash
 docker network create external-fcdk
 ```
-* Start Docker compose file ``db`` and ``API`` folders respectively
+* Start Docker compose file in ``db`` and ``API`` folders respectively
 ```bash
 docker compose up -d
 ```
 * Or just start project by running ``init.sh`` script in project folder
 
-* API is listening on ``http://your_server_ip:8085``. For example , to get player by squad (32 in an example) number use:
+* API is listening on ``http://your_server_ip:8085``. For example , to get player by squad number(32 in an example) use:
 ``http://your_server_ip:8085/player/number/32``
 
 ![alt text](static/example.png)
 
-* Go to ``http://your_server_ip:8085/docs`` see API documentation (acces to the doccumentaion is available only if ``ENVIRONMENT`` variable for api service in ``API\docker-compose.yml`` is not set to ``Production``).
+* Go to ``http://your_server_ip:8085/docs`` to see API documentation (acces to the doccumentaion is available only if ``ENVIRONMENT`` variable for api service in ``API\docker-compose.yml`` is not set to ``Production``).
 
 ## Endpoint reference
  This is class diagram for database (for now, only class ``Player``)
