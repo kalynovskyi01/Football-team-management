@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:18
+    restart: always
+    # Set shared memory limit when using docker compose
+    shm_size: 128mb
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=fcdk_db
+    volumes:
+      - postgres_data:/var/lib/postgresql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+   # The database shouldn't be public in production. You shouldn't allow port forwarding 
+   # ports:
+   #   - 127.0.0.1:5432:5432
+    networks:
+      - external-fcdk
+  adminer:
+    image: adminer:6
+    restart: always
+    #for basic security, Adminer is availibale only via loopback interface 
+    ports:
+      - "127.0.0.1:8080:8080"
+    networks:
+      - external-fcdk
+volumes:
+  postgres_data:
+networks:
+  external-fcdk:
+    external: true
