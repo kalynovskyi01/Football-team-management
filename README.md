@@ -12,7 +12,7 @@ This project was created strictly for educational purposes under the [MIT Licens
 
 As a database this project use PostgreSQL 18 and Adminer 6 for lightweight database management and administration. Project database is ``fcdk_db`` with table ``players``
 
-The REST API is built with FastAPI and runs inside a Docker container based on Python image. As an example of API Gateway Nginx is used. For a basic security request rate limit is implameted. 
+The REST API is built with FastAPI and runs inside a Docker container based on Python image. As an example of API Gateway, Nginx is used. For a basic security, request rate limit is implameted. 
 
 Only one port ``8085`` is open for API users outside the server loopback network. If you need have acces to database via Adminer UI you have to be conected to the server via SSH and launch port forwarding.
 
